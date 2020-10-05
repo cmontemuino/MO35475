@@ -1,3 +1,4 @@
+<!-- omit in toc -->
 # Distributed Systems Course - MO35475
 
 [![GitHub license](https://img.shields.io/github/license/cmontemuino/mo35475?color=blue)](https://github.com/cmontemuino/mo35475/blob/master/LICENSE)
@@ -8,6 +9,18 @@ Unofficial course materials and notes for the Distributed Systems course at Univ
 |:---|
 
 ---
+
+<!-- omit in toc -->
+## Table of Contents
+
+- [What is Included in this Repository](#what-is-included-in-this-repository)
+- [License](#license)
+
+---
+
+## What is Included in this Repository
+
+- [Labs](labs/README.md)
 
 ## License
 
