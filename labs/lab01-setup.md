@@ -44,7 +44,10 @@ You will notice the green "Create" button is enable right after selecting the te
 Please repeat the process for the "Worker" node (:eye: it must have the "Middle" network interface only).
 
 <details>
-<summary style="font-weight: bold">Networking ...</summary>
+<summary>Networking ...</summary>
+
+---
+
 Cluster's nodes need a network connection to interconnect virtual machines or access external resources (e.g., the Internet).
 
 We want to forbid worker nodes to directly access the Internet, but delegate this access to master nodes:
@@ -74,6 +77,8 @@ This Virtual Network is intended to interconnect virtual machines inside OpenNeb
 - `Bridge`: `br2`
 - `Network Address`: `20.20.20.0`
 - `Network Mask`: `2255.255.254.0`
+
+---
 
 </details>
 
