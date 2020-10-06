@@ -18,6 +18,7 @@ Besides the virtual campus's provided material, we intend this guide to offer yo
 - [Login](#login)
 - [Virtual Machines Dashboard](#virtual-machines-dashboard)
 - [Create a KVM](#create-a-kvm)
+- [Running Commands After Restarting a Machine](#running-commands-after-restarting-a-machine)
 
 ---
 
@@ -78,10 +79,28 @@ This Virtual Network is intended to interconnect virtual machines inside OpenNeb
 - `Network Address`: `20.20.20.0`
 - `Network Mask`: `2255.255.254.0`
 
+<!-- omit in toc -->
+### Defining Firewall Rules
+
+You will use the `firewall-cmd` to define some firewalls rules. For example:
+
+```script
+firewall-cmd --direct --add-rule ipv4 filter FORWARD 0 –i ens3 –o ens4 –m state --state RELATED,ESTABLISHED –j ACCEPT
+```
+
+Let's focus on the `–i ens3 –o ens4` part. Here, we're specifying `ens3` as input, and `ens4` as output. In our setup, `ens3` corresponds to the "Internet" network, and `ens4` to the "Middle" network.
+
+:warning: **You need to verify `ens3` and `ens4` are correct. How? `ls /etc/sysconfig/network-scripts/ifcfg-ens*`.**
+
 ---
 
 </details>
 
+## Running Commands After Restarting a Machine
+
+You are advised to write some commands in a `/etc/rc.local` file, but there is no magic in doing that. You need to explicitly load such file after booting a node. Please make sure you understand the differences of [bashr vs bash-profile].
+
+[bashr vs bash-profile]: https://linuxize.com/post/bashrc-vs-bash-profile/
 [OpenNebula]: https://opennebula.io/
 [OpenNebula Docs]: http://docs.opennebula.io/5.10/operation/index.html
 [kvm]: https://www.linux-kvm.org/page/Main_Page
